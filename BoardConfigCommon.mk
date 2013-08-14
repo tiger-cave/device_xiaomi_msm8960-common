@@ -85,6 +85,7 @@ TARGET_PROCESS_SDK_VERSION_OVERRIDE := \
     /system/bin/cameraserver=22 \
     /system/bin/mediaserver=22 \
     /system/vendor/bin/mm-qcamera-daemon=22
+TARGET_SPECIFIC_CAMERA_PARAMETER_LIBRARY := camera_parameters_xiaomi_msm8960
 
 # Dexpreopt
 ifeq ($(HOST_OS),linux)
@@ -133,6 +134,9 @@ TARGET_PROVIDES_GPS_LOC_API            := true
 # HIDL
 DEVICE_MANIFEST_FILE := $(PLATFORM_PATH)/manifest.xml
 DEVICE_MATRIX_FILE   := $(PLATFORM_PATH)/compatibility_matrix.xml
+
+# Includes
+TARGET_SPECIFIC_HEADER_PATH := $(PLATFORM_PATH)/include
 
 # Lights
 TARGET_PROVIDES_LIBLIGHT := true
