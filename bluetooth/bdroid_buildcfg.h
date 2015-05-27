@@ -21,6 +21,8 @@
 
 #define BTM_DEF_LOCAL_NAME   "Xiaomi MI-2"
 
+#define SC_MODE_INCLUDED FALSE
+
 // Enables Interleave scan
 #define BTA_HOST_INTERLEAVE_SEARCH  TRUE
 // skips conn update at conn completion
