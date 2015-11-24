@@ -37,7 +37,6 @@ PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/rootdir/ramdisk/init.qcom.rc:root/init.qcom.rc \
     $(COMMON_PATH)/rootdir/ramdisk/init.qcom.usb.rc:root/init.qcom.usb.rc \
     $(COMMON_PATH)/rootdir/ramdisk/ueventd.qcom.rc:root/ueventd.qcom.rc \
-    $(COMMON_PATH)/rootdir/ramdisk/fstab.qcom:root/fstab.qcom \
     $(COMMON_PATH)/rootdir/ramdisk/init.qcom.usb.sh:root/init.qcom.usb.sh \
     $(COMMON_PATH)/rootdir/ramdisk/init.qcom.sh:root/init.qcom.sh \
     $(COMMON_PATH)/rootdir/ramdisk/init.qcom.class_core.sh:root/init.qcom.class_core.sh \
@@ -52,7 +51,12 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/rootdir/etc/init.qcom.mdm_links.sh:system/etc/init.qcom.mdm_links.sh \
     $(COMMON_PATH)/rootdir/etc/init.qcom.modem_links.sh:system/etc/init.qcom.modem_links.sh \
-    $(COMMON_PATH)/rootdir/etc/init.qcom.wifi.sh:system/etc/init.qcom.wifi.sh
+    $(COMMON_PATH)/rootdir/etc/init.qcom.wifi.sh:system/etc/init.qcom.wifi.sh \
+    $(COMMON_PATH)/rootdir/etc/sec_config:system/etc/sec_config
+
+# Sid Nid Mapping
+PRODUCT_COPY_FILES += \
+    $(COMMON_PATH)/configs/sidnid-conf.xml:system/etc/sidnid-conf.xml
 
 # WIFI
 PRODUCT_COPY_FILES += \
@@ -77,7 +81,8 @@ PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml \
     $(COMMON_PATH)/rootdir/etc/media_profiles.xml:system/etc/media_profiles.xml \
-    $(COMMON_PATH)/rootdir/etc/media_codecs.xml:system/etc/media_codecs.xml
+    $(COMMON_PATH)/rootdir/etc/media_codecs.xml:system/etc/media_codecs.xml \
+    $(COMMON_PATH)/rootdir/etc/media_codecs_performance.xml:system/etc/media_codecs_performance.xml
 
 # BT
 PRODUCT_COPY_FILES += \
@@ -85,8 +90,8 @@ PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/rootdir/etc/init.qcom.btdun.sh:system/etc/init.qcom.btdun.sh
 
 # FM
-PRODUCT_COPY_FILES += \
-    $(COMMON_PATH)/rootdir/etc/init.qcom.fm.sh:system/etc/init.qcom.fm.sh
+#PRODUCT_COPY_FILES += \
+#    $(COMMON_PATH)/rootdir/etc/init.qcom.fm.sh:system/etc/init.qcom.fm.sh
 
 # Boot
 PRODUCT_COPY_FILES += \
@@ -147,6 +152,10 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.print.xml:system/etc/permissions/android.software.print.xml \
     frameworks/native/data/etc/android.hardware.ethernet.xml:system/etc/permissions/android.hardware.ethernet.xml
 
+# MIDI feature
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.software.midi.xml:system/etc/permissions/android.software.midi.xml
+
 PRODUCT_CHARACTERISTICS := nosdcard
 
 PRODUCT_TAGS += dalvik.gc.type-precise
@@ -185,9 +194,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     af.resampler.quality=255 \
     lpa.use-stagefright=true \
     qcom.hw.aac.encoder=true \
-    lpa.decode=false \
-    tunnel.decode=false \
-    tunnel.audiovideo.decode=false \
     mm.enable.qcom_parser=33395 \
     media.aac_51_output_enabled=true
 
@@ -228,9 +234,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # USB
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    persist.sys.usb.config=mtp \
-    ro.vold.umsdirtyratio=50 \
-    persist.sys.isUsbOtgEnabled=1
+    ro.vold.umsdirtyratio=50
 
 # Gps
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -309,14 +313,17 @@ PRODUCT_PACKAGES += \
     libdashplayer \
     libdivxdrmdecrypt \
     libmm-omxcore \
-    libstagefrighthw
+    libextmedia_jni \
+    libOmxVidcCommon \
+    libstagefrighthw \
+    qcmediaplayer \
+    libqcmediaplayer \
+    libextmedia_jni
 
 # fmradio support
-PRODUCT_PACKAGES += \
-    qcom.fmradio \
-    libqcomfm_jni \
-    FM2 \
-    FMRecord
+#PRODUCT_PACKAGES += \
+#    libfmjni \
+#    FMRadio
 
 # CodeAurora
 PRODUCT_PACKAGES += \
@@ -351,8 +358,16 @@ PRODUCT_PACKAGES += \
     wcnss-service \
     libwifi-hal
 
-PRODUCT_PROPERTY_OVERRIDES += \
-    media.stagefright.use-awesome=true
+PRODUCT_PACKAGES += \
+    telresources \
+    libexsurfaceflinger
+
+PRODUCT_PACKAGES += \
+    AudioFX
+
+PRODUCT_PACKAGES += \
+    ExactCalculator \
+    messaging
 
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     camera2.portability.force_api=1

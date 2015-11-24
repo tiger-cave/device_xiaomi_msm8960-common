@@ -229,7 +229,9 @@
     <string name="config_datause_iface" translatable="false">rmnet_usb0</string>
 
     <!-- Flag indicating if the speed up audio on mt call code should be executed -->
+    <!--
     <bool name="config_speed_up_audio_on_mt_calls">true</bool>
+    -->
 
     <!-- Indicate whether to allow the device to suspend when the screen is off
          due to the proximity sensor.  This resource should only be set to true
@@ -241,20 +243,16 @@
         <!-- Enable lockscreen translucent decor -->
     <bool name="config_enableLockScreenTranslucentDecor">true</bool>
 
-    <string-array name="config_locationProviderPackageNames" translatable="false">
-        <!-- The Google provider -->
-        <item>com.google.android.gms</item>
-        <!-- The standard AOSP fused location provider -->
-        <item>com.android.location.fused</item>
-    </string-array>
-
     <!-- Configuration to sending and receiving Mms when mobile data is disable.-->
+    <!--
     <bool name="config_enable_mms_with_mobile_data_off">true</bool>
+    -->
 
     <!-- Configuartion to support 7bit Ascii encoding and decoding
          for long messages. -->
+    <!--
     <bool name="config_ascii_7bit_support_for_long_message">true</bool>
-
+    -->
     <!--  Maximum number of supported users -->
     <integer name="config_multiuserMaximumUsers">4</integer>
 
@@ -279,4 +277,19 @@
         <item>bugreport</item>
         <item>users</item>
     </string-array>
+
+    <!-- Configuartion to set zen mode when silent mode is on -->
+    <!--
+    <bool name="config_setZenModeWhenSilentModeOn">true</bool>
+    -->
+    <!-- Flag specifying whether VoLTE & VT is availasble on device -->
+    <bool name="config_device_volte_available">false</bool>
+
+    <!-- Flag specifying whether VoLTE & VT should be available for carrier: independent of
+         carrier provisioning. If false: hard disabled. If true: then depends on carrier
+         provisioning, availability etc -->
+    <bool name="config_carrier_volte_available">false</bool>
+
+    <!-- Flag indicating emergency calls will always use IMS irrespective of the state of the IMS connection -->
+    <bool name="useImsAlwaysForEmergencyCall">false</bool>
 </resources>
