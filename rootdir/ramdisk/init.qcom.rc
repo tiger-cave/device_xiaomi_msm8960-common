@@ -791,10 +791,8 @@ service mpdecision /system/bin/mpdecision --no_sleep --avg_comp
    disabled
 
 service kickstart /system/bin/qcks -i /firmware/image/ -r /data/tombstones/mdm/
-    class core
-    user system
-    group system radio
     oneshot
+    disabled
 
 service qrngd /system/bin/qrngd -f
    class main
@@ -814,6 +812,10 @@ on property:ro.baseband=mdm
 service dpmd /system/bin/dpmd
     class late_start
     socket dpmd stream 660 root system
+
+#Disable boot timeout for external modems.
+on property:persist.sys.mdm.timeout_disable=1
+    write /sys/module/mdm_common/parameters/disable_boot_timeout 1
 
 # Limit to SoC reset (1) and independent SSR (3)
 on property:persist.sys.ssr.restart_level=1
