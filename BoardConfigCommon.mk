@@ -16,6 +16,8 @@
 
 COMMON_PATH := device/xiaomi/msm8960-common
 
+TARGET_SPECIFIC_HEADER_PATH := $(COMMON_PATH)/include
+
 TARGET_NO_RADIOIMAGE := true
 TARGET_NO_BOOTLOADER := true
 
@@ -89,7 +91,9 @@ BOARD_USES_ALSA_AUDIO                   := true
 TARGET_USES_QCOM_MM_AUDIO               := true
 TARGET_USES_QCOM_COMPRESSED_AUDIO       := true
 BOARD_USES_LEGACY_ALSA_AUDIO            := true
-QCOM_ANC_HEADSET_ENABLED                := false
+QCOM_ANC_HEADSET_ENABLED                := true
+QCOM_PROXY_DEVICE_ENABLED               := true
+AUDIO_FEATURE_ENABLED_PROXY_DEVICE      := true
 QCOM_FLUENCE_ENABLED                    := true
 QCOM_MULTI_VOICE_SESSION_ENABLED := true
 # GPS
