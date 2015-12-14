@@ -90,8 +90,8 @@ PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/rootdir/etc/init.qcom.btdun.sh:system/etc/init.qcom.btdun.sh
 
 # FM
-#PRODUCT_COPY_FILES += \
-#    $(COMMON_PATH)/rootdir/etc/init.qcom.fm.sh:system/etc/init.qcom.fm.sh
+PRODUCT_COPY_FILES += \
+    $(COMMON_PATH)/rootdir/etc/init.qcom.fm.sh:system/etc/init.qcom.fm.sh
 
 # Boot
 PRODUCT_COPY_FILES += \
@@ -321,9 +321,9 @@ PRODUCT_PACKAGES += \
     libextmedia_jni
 
 # fmradio support
-#PRODUCT_PACKAGES += \
-#    libfmjni \
-#    FMRadio
+PRODUCT_PACKAGES += \
+    libfmjni \
+    FMRadio
 
 # CodeAurora
 PRODUCT_PACKAGES += \
