@@ -30,6 +30,13 @@ ifeq ($(USE_DEVICE_SPECIFIC_CAMERA),true)
         LOCAL_CFLAGS += -DUSE_ION
       endif
 
+      ifeq ($(TARGET_USES_MEDIA_EXTENSIONS),true)
+        LOCAL_CFLAGS += -DUSE_NATIVE_HANDLE_SOURCE
+      endif
+
+      # Uncomment below line to close native handles on releaseRecordingFrame
+      LOCAL_CFLAGS += -DHAL_CLOSE_NATIVE_HANDLES
+
       LOCAL_CFLAGS += -DCAMERA_ION_HEAP_ID=ION_IOMMU_HEAP_ID
       LOCAL_CFLAGS += -DCAMERA_ZSL_ION_HEAP_ID=ION_IOMMU_HEAP_ID
       ifeq ($(TARGET_BOARD_PLATFORM),msm8960)
