@@ -141,3 +141,10 @@ EXTENDED_FONT_FOOTPRINT := true
 BOARD_USES_LEGACY_MMAP := true
 
 MALLOC_IMPL := dlmalloc
+
+# SELinux policies
+# qcom sepolicy
+include device/qcom/sepolicy/sepolicy.mk
+
+BOARD_SEPOLICY_DIRS += \
+        $(COMMON_PATH)/sepolicy
