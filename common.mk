@@ -18,6 +18,8 @@
 # are also specific to aries devices
 #
 # Everything in this directory will become public
+# Common QCOM configuration tools
+$(call inherit-product, device/qcom/common/Android.mk)
 
 COMMON_PATH := device/xiaomi/msm8960-common
 
