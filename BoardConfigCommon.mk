@@ -138,6 +138,9 @@ PRODUCT_BOOT_JARS += \
 # Radio
 TARGET_RIL_VARIANT := caf
 
+# DEXPREOPT
+DONT_DEXPREOPT_PREBUILTS := true
+
 # Include an expanded selection of fonts
 EXTENDED_FONT_FOOTPRINT := true
 
