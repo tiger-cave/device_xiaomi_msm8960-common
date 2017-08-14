@@ -133,7 +133,6 @@ SUPERUSER_EMBEDDED:= true
 
 PRODUCT_BOOT_JARS += \
     qcmediaplayer \
-    org.codeaurora.Performance \
     tcmiface
 
 # Include an expanded selection of fonts
