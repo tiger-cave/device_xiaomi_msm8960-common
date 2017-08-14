@@ -135,6 +135,9 @@ PRODUCT_BOOT_JARS += \
     qcmediaplayer \
     tcmiface
 
+# Radio
+TARGET_RIL_VARIANT := caf
+
 # Include an expanded selection of fonts
 EXTENDED_FONT_FOOTPRINT := true
 
