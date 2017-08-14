@@ -367,19 +367,3 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     camera2.portability.force_api=1
-
-# Default Audio
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.config.ringtone=MI.ogg \
-    ro.config.notification_sound=FadeIn.ogg \
-    ro.config.alarm_alert=GoodMorning.ogg
-
-# Audio
-PRODUCT_COPY_FILES += \
-    $(COMMON_PATH)/media/FadeIn.ogg:system/media/audio/notifications/FadeIn.ogg \
-    $(COMMON_PATH)/media/FadeOut.ogg:system/media/audio/notifications/FadeOut.ogg \
-    $(COMMON_PATH)/media/GoodMorning.ogg:system/media/audio/alarms/GoodMorning.ogg \
-    $(COMMON_PATH)/media/MI.ogg:system/media/audio/ringtones/MI.ogg
-
-# This is the aries-specific audio package
-$(call inherit-product, frameworks/base/data/sounds/AudioPackage10.mk)
