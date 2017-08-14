@@ -111,10 +111,6 @@ PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/rootdir/etc/thermal-engine-8064ab.conf:system/etc/thermal-engine-8064ab.conf \
     $(COMMON_PATH)/rootdir/etc/thermal-engine-8960.conf:system/etc/thermal-engine-8960.conf
 
-# bootanimation
-PRODUCT_COPY_FILES += \
-    $(COMMON_PATH)/bootanimation.zip:system/media/bootanimation.zip
-
 # Prebuilt kl and kcm keymaps
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/rootdir/keylayout/atmel_mxt_ts.kl:system/usr/keylayout/atmel_mxt_ts.kl \
