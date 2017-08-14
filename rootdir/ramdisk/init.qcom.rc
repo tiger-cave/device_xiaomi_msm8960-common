@@ -510,11 +510,13 @@ service cnd /system/bin/cnd
 service irsc_util /system/bin/irsc_util "/etc/sec_config"
     class main
     user root
+    seclabel u:r:irsc_util:s0
     oneshot
 
 service rmt_storage /system/bin/rmt_storage
     class main
     user root
+    seclabel u:r:rmt_storage:s0
     disabled
 
 on property:ro.boot.emmc=true
@@ -563,6 +565,7 @@ service qmuxd /system/bin/qmuxd
     class main
     user radio
     group radio audio bluetooth gps qcom_diag
+    seclabel u:r:qmuxd:s0
     disabled
 
 service audiod /system/bin/audiod
@@ -572,12 +575,14 @@ service audiod /system/bin/audiod
 
 service netmgrd /system/bin/netmgrd
     class main
+    seclabel u:r:netmgrd:s0
     disabled
 
 service sensors /system/bin/sensors.qcom
     class late_start
     user root
     group root
+    seclabel u:r:sensors:s0
     disabled
 
 on property:ro.use_data_netmgrd=false
@@ -735,6 +740,7 @@ service ppd /system/bin/mm-pp-daemon
     class late_start
     user system
     socket pps stream 0660 system system graphics
+    seclabel u:r:mm-pp-daemon:s0
     group system graphics
 
 service hostapd /system/bin/hostapd -dddd /data/hostapd/hostapd.conf
@@ -748,7 +754,7 @@ service time_daemon /system/bin/time_daemon
    class late_start
    user root
    group root
-
+   seclabel u:r:time_daemon:s0
 
 service sysmatsir /system/bin/smonsir
     user root
@@ -773,6 +779,7 @@ service qcamerasvr /system/bin/mm-qcamera-daemon
     class late_start
     user media
     group system camera inet input graphics
+    seclabel u:r:mm-qcamerad:s0
 
 service thermald /system/bin/thermald
    class main
@@ -788,10 +795,12 @@ service thermal-engine /system/bin/thermal-engine
 
 service mpdecision /system/bin/mpdecision --no_sleep --avg_comp
    user root
+   seclabel u:r:mpdecision:s0
    disabled
 
 service kickstart /system/bin/qcks -i /firmware/image/ -r /data/tombstones/mdm/
     oneshot
+    seclabel u:r:mdm_helper:s0
     disabled
 
 service qrngd /system/bin/qrngd -f
@@ -803,6 +812,7 @@ service qseecomd /system/bin/qseecomd
     class core
     user root
     group root
+    seclabel u:r:tee:s0
 
 # Start kickstart if mdm is detected
 on property:ro.baseband=mdm
