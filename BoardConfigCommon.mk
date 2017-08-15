@@ -86,6 +86,7 @@ TARGET_USES_ION             := true
 USE_OPENGL_RENDERER         := true
 TARGET_USES_C2D_COMPOSITION := true
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
+OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 
 # Audio
 BOARD_USES_ALSA_AUDIO                   := true
