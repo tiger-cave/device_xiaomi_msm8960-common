@@ -34,6 +34,10 @@ PRODUCT_AAPT_PREF_CONFIG := xhdpi
 
 PRODUCT_LOCALES := zh_CN
 
+# Apache Hack
+PRODUCT_COPY_FILES += \
+    prebuilts/sdk/org.apache.http.legacy/org.apache.http.legacy.jar:/system/framework/org.apache.http.legacy.jar
+
 # Ramdisk
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/rootdir/ramdisk/init.qcom.rc:root/init.qcom.rc \
