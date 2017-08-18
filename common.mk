@@ -174,8 +174,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     wlan.driver.ath=0
 
 PRODUCT_PACKAGES += \
-	libwcnss_qmi \
-	wcnss_service
+    libwcnss_qmi \
+    wcnss_service
 
 # QC Perf
 PRODUCT_PROPERTY_OVERRIDES += \
