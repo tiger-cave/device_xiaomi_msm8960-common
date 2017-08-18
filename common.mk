@@ -297,6 +297,10 @@ PRODUCT_PACKAGES += \
     libaudio-resampler \
     tinymix
 
+# Camera
+PRODUCT_PACKAGES += \
+    camera.msm8960
+
 # Omx
 PRODUCT_PACKAGES += \
     libOmxAacEnc \
@@ -368,3 +372,7 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     camera2.portability.force_api=1
+
+# Shims
+ PRODUCT_PACKAGES += \
+    libshim_camera

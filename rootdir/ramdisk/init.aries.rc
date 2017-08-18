@@ -24,8 +24,7 @@ on early-init
     write /sys/module/rmnet_usb/parameters/rmnet_data_init 1
 
 on init
-    # Use this trick to get a running rild
-    export LD_SHIM_LIBS "/system/vendor/lib/egl/libEGL_adreno.so|libshim_boringssl.so:/system/vendor/lib/egl/libGLESv2_adreno.so|libshim_boringssl.so:/system/vendor/lib/egl/libGLESv1_CM_adreno.so|libshim_boringssl.so"
+    export LD_SHIM_LIBS "/system/lib/hw/camera.vendor.msm8960.so|libshim_camera.so"
 
     # See storage config details at http://source.android.com/tech/storage/
     mkdir /storage 0775 system system
