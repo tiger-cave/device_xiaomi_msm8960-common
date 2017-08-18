@@ -39,20 +39,11 @@ PRODUCT_COPY_FILES += \
     prebuilts/sdk/org.apache.http.legacy/org.apache.http.legacy.jar:/system/framework/org.apache.http.legacy.jar
 
 # Ramdisk
-PRODUCT_COPY_FILES += \
-    $(COMMON_PATH)/rootdir/ramdisk/init.qcom.rc:root/init.qcom.rc \
-    $(COMMON_PATH)/rootdir/ramdisk/init.qcom.usb.rc:root/init.qcom.usb.rc \
-    $(COMMON_PATH)/rootdir/ramdisk/ueventd.qcom.rc:root/ueventd.qcom.rc \
-    $(COMMON_PATH)/rootdir/ramdisk/init.qcom.usb.sh:root/init.qcom.usb.sh \
-    $(COMMON_PATH)/rootdir/ramdisk/init.qcom.sh:root/init.qcom.sh \
-    $(COMMON_PATH)/rootdir/ramdisk/init.qcom.class_core.sh:root/init.qcom.class_core.sh \
-    $(COMMON_PATH)/rootdir/ramdisk/init.class_main.sh:root/init.class_main.sh \
-    $(COMMON_PATH)/rootdir/ramdisk/init.qcom.early_boot.sh:root/init.qcom.early_boot.sh \
-    $(COMMON_PATH)/rootdir/ramdisk/init.qcom.syspart_fixup.sh:root/init.qcom.syspart_fixup.sh
-
-# Charger
-PRODUCT_COPY_FILES += \
-    $(COMMON_PATH)/rootdir/ramdisk/chargeonlymode:root/sbin/chargeonlymode
+PRODUCT_PACKAGES += \
+    init.aries.rc  \
+    init.qcom.usb.rc \
+    init.qcom.usb.sh \
+    ueventd.aries.rc
 
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/rootdir/etc/init.qcom.mdm_links.sh:system/etc/init.qcom.mdm_links.sh \
