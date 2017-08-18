@@ -380,3 +380,7 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 # Shims
  PRODUCT_PACKAGES += \
     libshim_camera
+
+# Snap
+PRODUCT_PACKAGES += \
+    Snap
