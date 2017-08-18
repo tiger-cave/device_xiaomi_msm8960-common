@@ -333,7 +333,6 @@ PRODUCT_PACKAGES += \
 # CodeAurora
 PRODUCT_PACKAGES += \
     qcmediaplayer \
-    org.codeaurora.Performance \
     BluetoothExt \
     javax.btobex \
     libattrib_static \
