@@ -25,6 +25,10 @@ QCOM_BOARD_PLATFORMS                         := msm8960
 TARGET_BOARD_PLATFORM                          := msm8960
 TARGET_BOOTLOADER_BOARD_NAME      := MSM8960
 
+# Init
+TARGET_INIT_VENDOR_LIB := libinit_msm8960
+TARGET_LIBINIT_DEFINES_FILE := $(COMMON_PATH)/init/init_msm8960.cpp
+
 # Flags
 TARGET_GLOBAL_CFLAGS += -mfpu=neon -mfloat-abi=softfp -DQCOM_HARDWARE
 TARGET_GLOBAL_CPPFLAGS += -mfpu=neon -mfloat-abi=softfp -DQCOM_HARDWARE
