@@ -85,6 +85,9 @@ TARGET_USES_QCOM_BSP        := true
 # QCOM enhanced A/V
 TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
 
+# Light
+TARGET_PROVIDES_LIBLIGHT := true
+
 # Display
 TARGET_USES_ION             := true
 USE_OPENGL_RENDERER         := true

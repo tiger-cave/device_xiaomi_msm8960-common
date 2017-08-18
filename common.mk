@@ -153,6 +153,10 @@ PRODUCT_CHARACTERISTICS := nosdcard
 
 PRODUCT_TAGS += dalvik.gc.type-precise
 
+# Light
+PRODUCT_PACKAGES += \
+    lights.msm8960
+
 # RIL
 PRODUCT_PROPERTY_OVERRIDES += \
     telephony.lteOnCdmaDevice=0 \
