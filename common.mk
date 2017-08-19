@@ -305,6 +305,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     camera.msm8960
 
+
+PRODUCT_PACKAGES += \
+    libstlport
+
 # Omx
 PRODUCT_PACKAGES += \
     libOmxAacEnc \
@@ -377,7 +381,7 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     camera2.portability.force_api=1
 
 # Shims
- PRODUCT_PACKAGES += \
+PRODUCT_PACKAGES += \
     libshim_camera
 
 # Snap
