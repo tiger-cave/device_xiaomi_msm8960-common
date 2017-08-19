@@ -44,7 +44,13 @@ PRODUCT_PACKAGES += \
     init.aries.rc  \
     init.qcom.usb.rc \
     init.qcom.usb.sh \
-    ueventd.aries.rc
+    ueventd.aries.rc \
+    init.class_main.sh \
+    init.qcom.class_core.sh \
+    init.qcom.early_boot.sh \
+    init.qcom.sh \
+    init.qcom.syspart_fixup.sh \
+    init.target.rc
 
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/rootdir/etc/init.qcom.mdm_links.sh:system/etc/init.qcom.mdm_links.sh \
@@ -55,6 +61,10 @@ PRODUCT_COPY_FILES += \
 # Sid Nid Mapping
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/sidnid-conf.xml:system/etc/sidnid-conf.xml
+
+# Charger
+PRODUCT_COPY_FILES += \
+    $(COMMON_PATH)/rootdir/ramdisk/chargeonlymode:root/sbin/chargeonlymode
 
 # WIFI
 PRODUCT_COPY_FILES += \
