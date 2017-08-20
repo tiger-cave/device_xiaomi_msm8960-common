@@ -115,7 +115,7 @@ BOARD_USES_CM_HARDWARE = true
 BOARD_HARDWARE_CLASS := $(COMMON_PATH)/cmhw
 
 # Camera
-COMMON_GLOBAL_CFLAGS       += -DQCOM_BSP
+BOARD_GLOBAL_CFLAGS       += -DQCOM_BSP
 
 # Bluetooth
 BOARD_HAVE_BLUETOOTH                        := true
