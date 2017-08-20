@@ -290,9 +290,6 @@
          provisioning, availability etc -->
     <bool name="config_carrier_volte_available">false</bool>
 
-    <!-- Flag indicating emergency calls will always use IMS irrespective of the state of the IMS connection -->
-    <bool name="useImsAlwaysForEmergencyCall">false</bool>
-
     <!-- Hardware keys present on the device, stored as a bit field.
          This integer should equal the sum of the corresponding value for each
          of the following keys present:
