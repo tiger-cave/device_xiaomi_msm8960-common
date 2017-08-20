@@ -158,7 +158,7 @@ EXTENDED_FONT_FOOTPRINT := true
 
 BOARD_USES_LEGACY_MMAP := true
 
-MALLOC_IMPL := dlmalloc
+MALLOC_SVELTE := true
 
 # SELinux policies
 # qcom sepolicy
