@@ -438,18 +438,21 @@ PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0-impl \
     android.hardware.contexthub@1.0-impl
 
-
 # Thermal HAL
 PRODUCT_PACKAGES += \
     android.hardware.thermal@1.0-impl
 
-#USB HAL
+# USB HAL
 PRODUCT_PACKAGES += \
     android.hardware.usb@1.0-service
 
 # Vibrator
 PRODUCT_PACKAGES += \
     android.hardware.vibrator@1.0-impl
+
+# Power
+PRODUCT_PACKAGES += \
+    android.hardware.power@1.0-impl
 
 # HIDL
 PRODUCT_COPY_FILES += \
