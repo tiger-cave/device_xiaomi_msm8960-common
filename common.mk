@@ -448,3 +448,7 @@ PRODUCT_PACKAGES += \
 # Vibrator
 PRODUCT_PACKAGES += \
     android.hardware.vibrator@1.0-impl
+
+# HIDL
+PRODUCT_COPY_FILES += \
+    device/xiaomi/msm8960-common/manifest.xml:system/vendor/manifest.xml
