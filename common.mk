@@ -426,8 +426,8 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     camera2.portability.force_api=1
 
 # Shims
-PRODUCT_PACKAGES += \
-    libshim_camera
+#PRODUCT_PACKAGES += \
+#    libshim_camera
 
 # Snap
 PRODUCT_PACKAGES += \
