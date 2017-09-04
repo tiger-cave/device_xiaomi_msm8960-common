@@ -393,6 +393,7 @@ PRODUCT_PACKAGES += \
     services \
     ethernet-service \
     wifi-service \
+    wificond \
     tcmiface
 
 # Qualcomm random numbers generated
