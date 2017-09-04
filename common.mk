@@ -165,7 +165,8 @@ PRODUCT_TAGS += dalvik.gc.type-precise
 
 # Light
 PRODUCT_PACKAGES += \
-    lights.msm8960
+    lights.msm8960 \
+    android.hardware.light@2.0-impl
 
 # RIL
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -242,9 +243,21 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.aries.power_profile=middle
 
+# Bluetooth HAL
+PRODUCT_PACKAGES += \
+    android.hardware.bluetooth@1.0-impl
+
 # USB
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     ro.vold.umsdirtyratio=50
+
+# Gatekeeper HAL
+PRODUCT_PACKAGES += \
+    android.hardware.gatekeeper@1.0-impl
+
+#GNSS HAL
+PRODUCT_PACKAGES += \
+    android.hardware.gnss@1.0-impl
 
 # Gps
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -298,10 +311,19 @@ PRODUCT_PACKAGES += \
     gralloc.msm8960 \
     copybit.msm8960 \
     memtrack.msm8960 \
-    libemoji
+    libemoji \
+    android.hardware.graphics.allocator@2.0-impl \
+    android.hardware.graphics.allocator@2.0-service \
+    android.hardware.graphics.mapper@2.0-impl \
+    android.hardware.memtrack@1.0-impl \
+    android.hardware.graphics.composer@2.1-impl
 
 # Audio
 PRODUCT_PACKAGES += \
+    android.hardware.audio@2.0-impl \
+    android.hardware.audio.effect@2.0-impl \
+    android.hardware.broadcastradio@1.0-impl \
+    android.hardware.soundtrigger@2.0-impl \
     audio_policy.msm8960 \
     audio.primary.msm8960 \
     audio.a2dp.default \
@@ -312,11 +334,16 @@ PRODUCT_PACKAGES += \
 
 # Camera
 PRODUCT_PACKAGES += \
-    camera.msm8960
-
+    camera.msm8960 \
+    camera.device@3.2-impl \
+    android.hardware.camera.provider@2.4-impl
 
 PRODUCT_PACKAGES += \
     libstlport
+
+# Keystore
+PRODUCT_PACKAGES += \
+    android.hardware.keymaster@3.0-impl
 
 # Omx
 PRODUCT_PACKAGES += \
@@ -336,7 +363,12 @@ PRODUCT_PACKAGES += \
     libstagefrighthw \
     qcmediaplayer \
     libqcmediaplayer \
-    libextmedia_jni
+    libextmedia_jni \
+    android.hardware.drm@1.0-impl
+    
+# RenderScript HAL
+PRODUCT_PACKAGES += \
+    android.hardware.renderscript@1.0-impl
 
 # fmradio support
 PRODUCT_PACKAGES += \
@@ -367,6 +399,7 @@ PRODUCT_PACKAGES += \
     qrngd
 
 PRODUCT_PACKAGES += \
+    android.hardware.wifi@1.0-service \
     libwpa_client \
     hostapd \
     wpa_supplicant \
@@ -396,3 +429,22 @@ PRODUCT_PACKAGES += \
 # Snap
 PRODUCT_PACKAGES += \
     Snap
+
+# Sensors
+PRODUCT_PACKAGES += \
+    context_hub.default \
+    android.hardware.sensors@1.0-impl \
+    android.hardware.contexthub@1.0-impl
+
+
+# Thermal HAL
+PRODUCT_PACKAGES += \
+    android.hardware.thermal@1.0-impl
+
+#USB HAL
+PRODUCT_PACKAGES += \
+    android.hardware.usb@1.0-service
+
+# Vibrator
+PRODUCT_PACKAGES += \
+    android.hardware.vibrator@1.0-impl
