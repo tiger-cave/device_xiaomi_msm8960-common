@@ -164,7 +164,7 @@ MALLOC_SVELTE := true
 
 # SELinux policies
 # qcom sepolicy
-include device/qcom/sepolicy/sepolicy.mk
+#include device/qcom/sepolicy/sepolicy.mk
 
-BOARD_SEPOLICY_DIRS += \
-        $(COMMON_PATH)/sepolicy
+#BOARD_SEPOLICY_DIRS += \
+#        $(COMMON_PATH)/sepolicy
