@@ -137,3 +137,6 @@ etc/firmware/vidc.b03:vendor/firmware/vidc.b03
 etc/firmware/vidc.mdt:vendor/firmware/vidc.mdt
 etc/firmware/vidc_1080p.fw:vendor/firmware/vidc_1080p.fw
 etc/firmware/vidcfw.elf:vendor/firmware/vidcfw.elf
+
+# Widevine
+vendor/lib/mediadrm/libwvdrmengine.so|66ba66d047044f92eb0eada1faf6a5799ded90ab
