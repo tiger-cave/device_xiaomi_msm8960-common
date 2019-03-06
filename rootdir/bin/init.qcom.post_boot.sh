@@ -74,4 +74,4 @@ esac
 #fastrpc permission setting
 insmod /system/lib/modules/adsprpc.ko
 chown -h system.system /dev/adsprpc-smd
-chmod -h 666 /dev/adsprpc-smd
+chmod 666 /dev/adsprpc-smd

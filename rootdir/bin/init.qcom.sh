@@ -35,14 +35,14 @@ start_sensors()
 {
     mkdir -p /data/system/sensors
     touch /data/system/sensors/settings
-    chmod -h 775 /data/system/sensors
-    chmod -h 664 /data/system/sensors/settings
+    chmod 775 /data/system/sensors
+    chmod 664 /data/system/sensors/settings
     chown -h system /data/system/sensors/settings
 
     mkdir -p /data/misc/sensors
-    chmod -h 775 /data/misc/sensors
+    chmod 775 /data/misc/sensors
     mkdir -p /persist/misc/sensors
-    chmod -h 775 /persist/misc/sensors
+    chmod 775 /persist/misc/sensors
 
     if [ ! -s /data/system/sensors/settings ]; then
         # If the settings file is empty, enable sensors HAL
@@ -55,10 +55,10 @@ start_sensors()
 start_battery_monitor()
 {
 	chown -h root.system /sys/module/pm8921_bms/parameters/*
-	chmod -h 0660 /sys/module/pm8921_bms/parameters/*
+	chmod 0660 /sys/module/pm8921_bms/parameters/*
 	mkdir -p /data/bms
 	chown -h root.system /data/bms
-	chmod -h 0770 /data/bms
+	chmod 0770 /data/bms
 	start battery_monitor
 }
 
