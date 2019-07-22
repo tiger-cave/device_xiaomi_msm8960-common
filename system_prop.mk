@@ -79,6 +79,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     debug.egl.hw=1 \
     debug.composition.type=dyn \
     debug.hwui.use_buffer_age=false \
+    debug.sf.enable_gl_backpressure=1 \
     persist.hwc.mdpcomp.enable=true \
     debug.mdpcomp.logs=0 \
     ro.sf.lcd_density=320
