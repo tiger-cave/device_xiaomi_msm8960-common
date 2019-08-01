@@ -1,5 +1,5 @@
 LOCAL_PATH := $(call my-dir)
-ifeq ($(TARGET_DEVICE),$(filter $(TARGET_DEVICE),aries))
+ifneq ($(filter aries taurus,$(TARGET_DEVICE)),)
 include $(CLEAR_VARS)
 
 LOCAL_MODULE_TAGS := optional

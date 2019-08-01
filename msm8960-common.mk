@@ -14,12 +14,12 @@
 # limitations under the License.
 #
 
-# This file includes all definitions that apply to ALL aries devices, and
-# are also specific to aries devices
+# This file includes all definitions that apply to ALL xiaomi msm8960 devices, and
+# are also specific to xiaomi msm8960 devices
 #
 # Everything in this directory will become public
 
-LOCAL_PATH := device/xiaomi/aries
+LOCAL_PATH := device/xiaomi/msm8960-common
 
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += \
@@ -33,6 +33,9 @@ PRODUCT_ENFORCE_RRO_TARGETS := \
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xhdpi
 PRODUCT_AAPT_PREBUILT_DPI := hdpi
+
+# System properties
+-include $(LOCAL_PATH)/system_prop.mk
 
 # Permissions
 PRODUCT_COPY_FILES += \
@@ -71,7 +74,6 @@ PRODUCT_PACKAGES += \
     android.hardware.audio.effect@2.0-impl \
     android.hardware.broadcastradio@1.0-impl \
     android.hardware.soundtrigger@2.0-impl \
-    audio_amplifier.msm8960 \
     audio_policy.msm8960 \
     audio.primary.msm8960 \
     audio.a2dp.default \
@@ -296,4 +298,4 @@ PRODUCT_PACKAGES += \
     XiaomiParts
 
 # call the proprietary setup
-$(call inherit-product, vendor/xiaomi/aries/aries-vendor.mk)
+$(call inherit-product, vendor/xiaomi/msm8960-common/msm8960-common-vendor.mk)

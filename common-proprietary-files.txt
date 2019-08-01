@@ -1,0 +1,157 @@
+# Audio
+lib/libacdbloader.so:vendor/lib/libacdbloader.so
+lib/libaudioalsa.so:vendor/lib/libaudioalsa.so
+lib/libaudioparsers.so:vendor/lib/libaudioparsers.so
+lib/libadsprpc.so:vendor/lib/libadsprpc.so
+lib/libsurround_proc.so:vendor/lib/libsurround_proc.so
+
+# Bluetooth
+bin/hci_qcomm_init:vendor/bin/hci_qcomm_init
+vendor/lib/libaptX_encoder.so|b03772672144d4b750a5672c2922aded93bb0512
+vendor/lib/libbtnv.so
+
+# Camera
+bin/mm-qcamera-daemon:vendor/bin/mm-qcamera-daemon
+lib/libgemini.so:vendor/lib/libgemini.so
+lib/libimage-jpeg-dec-omx-comp.so:vendor/lib/libimage-jpeg-dec-omx-comp.so
+lib/libimage-jpeg-enc-omx-comp.so:vendor/lib/libimage-jpeg-enc-omx-comp.so
+lib/libimage-omx-common.so:vendor/lib/libimage-omx-common.so
+lib/libmmcamera_faceproc.so:vendor/lib/libmmcamera_faceproc.so
+lib/libmmcamera_frameproc.so:vendor/lib/libmmcamera_frameproc.so
+lib/libmmcamera_hdr_lib.so:vendor/lib/libmmcamera_hdr_lib.so
+lib/libmmcamera_image_stab.so:vendor/lib/libmmcamera_image_stab.so
+lib/libmmcamera_statsproc31.so:vendor/lib/libmmcamera_statsproc31.so
+lib/libmmcamera_wavelet_lib.so:vendor/lib/libmmcamera_wavelet_lib.so
+lib/libmmjpeg.so:vendor/lib/libmmjpeg.so
+lib/libmmstillomx.so:vendor/lib/libmmstillomx.so
+lib/liboemcamera.so:vendor/lib/liboemcamera.so
+lib/libstlport.so:vendor/lib/libstlport.so|f881a16e0dcf95c49b15368f7c7a5f8ad7ed9f81
+
+# DRM
+bin/qseecomd:vendor/bin/qseecomd
+lib/drm/libdrmprplugin.so:vendor/lib/drm/libdrmprplugin.so
+lib/libDivxDrm.so:vendor/lib/libDivxDrm.so
+lib/libdrmdiag.so:vendor/lib/libdrmdiag.so
+lib/libdrmfs.so:vendor/lib/libdrmfs.so
+lib/libdrmtime.so:vendor/lib/libdrmtime.so
+lib/libQSEEComAPI.so:vendor/lib/libQSEEComAPI.so
+lib/libSHIMDivxDrm.so:vendor/lib/libSHIMDivxDrm.so
+
+# FM
+bin/fm_qsoc_patches:vendor/bin/fm_qsoc_patches
+
+# Graphics
+vendor/lib/egl/eglsubAndroid.so
+vendor/lib/egl/libEGL_adreno.so
+vendor/lib/egl/libGLESv1_CM_adreno.so
+vendor/lib/egl/libGLESv2_adreno.so
+vendor/lib/egl/libplayback_adreno.so
+vendor/lib/egl/libq3dtools_adreno.so
+vendor/lib/libadreno_utils.so
+vendor/lib/libbccQTI.so
+vendor/lib/libC2D2.so
+vendor/lib/libc2d30-a3xx.so
+vendor/lib/libc2d30.so
+vendor/lib/libCB.so
+vendor/lib/libgsl.so
+vendor/lib/libllvm-qcom.so
+vendor/lib/librs_adreno.so|cceaf847d749ac2f1a3af3a1ae6ba653d93e0ed9
+vendor/lib/librs_adreno_sha1.so|e797997d3ac69dfa87904863672c5b9769c796cc
+vendor/lib/libRSDriver_adreno.so|2044baf0169177e52aba6d7138f80559ecf2b58d
+vendor/lib/libsc-a3xx.so
+
+# GPS
+lib/hw/flp.msm8960.so:vendor/lib/hw/flp.msm8960.so
+lib/libulp2.so:vendor/lib/libulp2.so
+vendor/lib/libalarmservice_jni.so
+vendor/lib/libgeofence.so
+vendor/lib/libizat_core.so
+vendor/lib/libloc_api_v02.so
+vendor/lib/libloc_ds_api.so
+
+# GPU firmware
+vendor/firmware/a300_pfp.fw
+vendor/firmware/a300_pm4.fw
+
+# Media
+lib/libmmipl.so:vendor/lib/libmmipl.so
+lib/libmmjps.so:vendor/lib/libmmjps.so
+lib/libmmmpo.so:vendor/lib/libmmmpo.so
+lib/libmmmpod.so:vendor/lib/libmmmpod.so
+
+# OMX
+lib/libOmxAacDec.so:vendor/lib/libOmxAacDec.so
+lib/libOmxEvrcDec.so:vendor/lib/libOmxEvrcDec.so
+lib/libOmxMux.so:vendor/lib/libOmxMux.so
+lib/libOmxQcelp13Dec.so:vendor/lib/libOmxQcelp13Dec.so
+lib/libOmxWmaDec.so:vendor/lib/libOmxWmaDec.so
+
+# QMI
+bin/efsks:vendor/bin/efsks
+bin/ks:vendor/bin/ks
+bin/qcks:vendor/bin/qcks
+bin/qmuxd:vendor/bin/qmuxd
+bin/rmt_storage:vendor/bin/rmt_storage
+-lib/libqminvapi.so:vendor/lib/libqminvapi.so
+vendor/lib/libdiag.so
+vendor/lib/libqmi_cci.so
+vendor/lib/libqmi_common_so.so
+vendor/lib/libqmi_csi.so
+vendor/lib/libqmi_encdec.so
+
+# Radio
+bin/irsc_util:vendor/bin/irsc_util
+bin/netmgrd:vendor/bin/netmgrd
+etc/modem/Diag.cfg:vendor/etc/modem/Diag.cfg
+lib/libCommandSvc.so:vendor/lib/libCommandSvc.so
+lib/libconfigdb.so:vendor/lib/libconfigdb.so
+lib/libdsi_netctrl.so:vendor/lib/libdsi_netctrl.so
+lib/libdsprofile.so:vendor/lib/libdsprofile.so
+lib/libdss.so:vendor/lib/libdss.so
+lib/libdsucsd.so:vendor/lib/libdsucsd.so
+lib/libdsutils.so:vendor/lib/libdsutils.so
+lib/libidl.so:vendor/lib/libidl.so
+lib/libnetmgr.so:vendor/lib/libnetmgr.so
+lib/libqcci_adc.so:vendor/lib/libqcci_adc.so
+lib/libqcci_legacy.so:vendor/lib/libqcci_legacy.so|3bf9e614fe169645dd2e0a1661f3e7638bb58904
+lib/libqdi.so:vendor/lib/libqdi.so
+lib/libqdp.so:vendor/lib/libqdp.so
+lib/libqmi.so:vendor/lib/libqmi.so
+lib/libqmi_client_qmux.so:vendor/lib/libqmi_client_qmux.so
+lib/libqmi_csvt_srvc.so:vendor/lib/libqmi_csvt_srvc.so
+lib/libqmiservices.so:vendor/lib/libqmiservices.so
+lib/libril-qc-qmi-1.so:vendor/lib/libril-qc-qmi-1.so
+lib/libril-qcril-hook-oem.so:vendor/lib/libril-qcril-hook-oem.so
+lib/libxml.so:vendor/lib/libxml.so
+
+# Sensors
+bin/sensors.qcom:vendor/bin/sensors.qcom|69c86df5d316a3019f6283f68151875d47688eef
+lib/hw/sensors.msm8960.so:vendor/lib/sensors.aries.so
+lib/libAKM.so:vendor/lib/libAKM.so
+lib/libsensor1.so:vendor/lib/libsensor1.so
+lib/libsensor_reg.so:vendor/lib/libsensor_reg.so
+lib/libsensor_test.so:vendor/lib/libsensor_test.so
+lib/libsensor_user_cal.so:vendor/lib/libsensor_user_cal.so
+
+# Thermal
+bin/mpdecision:vendor/bin/mpdecision|72e791a862a0d6496b8a49295a9c323cae7ea203
+bin/thermald:vendor/bin/thermald
+bin/thermal-engine:vendor/bin/thermal-engine
+lib/libthermalclient.so:vendor/lib/libthermalclient.so
+vendor/lib/libqc-opt.so
+vendor/lib/libqti-perfd-client.so
+
+# TimeService
+-app/TimeService/TimeService.apk:vendor/app/TimeService/TimeService.apk
+bin/time_daemon:vendor/bin/time_daemon
+lib/libTimeService.so:vendor/lib/libTimeService.so
+vendor/lib/libtime_genoff.so
+
+# Video Firmware
+etc/firmware/vidc.b00:vendor/firmware/vidc.b00
+etc/firmware/vidc.b01:vendor/firmware/vidc.b01
+etc/firmware/vidc.b02:vendor/firmware/vidc.b02
+etc/firmware/vidc.b03:vendor/firmware/vidc.b03
+etc/firmware/vidc.mdt:vendor/firmware/vidc.mdt
+etc/firmware/vidc_1080p.fw:vendor/firmware/vidc_1080p.fw
+etc/firmware/vidcfw.elf:vendor/firmware/vidcfw.elf

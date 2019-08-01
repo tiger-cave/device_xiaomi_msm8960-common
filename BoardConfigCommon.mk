@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-DEVICE_PATH := device/xiaomi/aries
+PLATFORM_PATH := device/xiaomi/msm8960-common
 
 # Architecture
 TARGET_ARCH_VARIANT_CPU    := cortex-a9
@@ -27,12 +27,8 @@ TARGET_ARCH_VARIANT        := armv7-a-neon
 ARCH_ARM_HAVE_TLS_REGISTER := true
 BOARD_USES_QCOM_HARDWARE   := true
 
-# Assert
-TARGET_OTA_ASSERT_DEVICE := aries
-
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := MSM8960
-TARGET_BOOTLOADER_NAME       := aries
 TARGET_NO_BOOTLOADER         := true
 TARGET_NO_RADIOIMAGE         := true
 
@@ -76,7 +72,7 @@ TARGET_LD_SHIM_LIBS := \
 
 # Bluetooth
 BLUETOOTH_HCI_USE_MCT                       := true
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(PLATFORM_PATH)/bluetooth
 BOARD_HAVE_BLUETOOTH                        := true
 BOARD_HAVE_BLUETOOTH_QCOM                   := true
 
@@ -101,7 +97,7 @@ ifeq ($(HOST_OS),linux)
 endif
 
 # MK Hardware
-JAVA_SOURCE_OVERLAYS := org.mokee.hardware|$(DEVICE_PATH)/mkhw|**/*.java
+JAVA_SOURCE_OVERLAYS := org.mokee.hardware|$(PLATFORM_PATH)/mkhw|**/*.java
 
 # Display
 BOARD_USES_LEGACY_MMAP          := true
@@ -117,7 +113,7 @@ TARGET_USES_ION                 := true
 TARGET_EXFAT_DRIVER := sdfat
 
 # Filesystem
-TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/config.fs
+TARGET_FS_CONFIG_GEN := $(PLATFORM_PATH)/config.fs
 
 # FM
 BOARD_HAVE_QCOM_FM              := true
@@ -135,12 +131,8 @@ TARGET_NO_RPC                          := true
 TARGET_PROVIDES_GPS_LOC_API            := true
 
 # HIDL
-DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/manifest.xml
-DEVICE_MATRIX_FILE   := $(DEVICE_PATH)/compatibility_matrix.xml
-
-# Init
-TARGET_INIT_VENDOR_LIB := libinit_msm8960
-TARGET_LIBINIT_DEFINES_FILE := $(DEVICE_PATH)/init/init_msm8960.cpp
+DEVICE_MANIFEST_FILE := $(PLATFORM_PATH)/manifest.xml
+DEVICE_MATRIX_FILE   := $(PLATFORM_PATH)/compatibility_matrix.xml
 
 # Lights
 TARGET_PROVIDES_LIBLIGHT := true
@@ -154,7 +146,6 @@ BOARD_MKBOOTIMG_ARGS                 := --ramdisk_offset 0x02000000
 BOARD_KERNEL_CMDLINE                 := console=null androidboot.hardware=qcom ehci-hcd.park=3 maxcpus=2 androidboot.bootdevice=msm_sdcc.1 androidboot.selinux=permissive
 TARGET_KERNEL_ARCH                   := arm
 TARGET_KERNEL_SOURCE                 := kernel/xiaomi/aries
-TARGET_KERNEL_CONFIG                 := aries-perf-user_defconfig
 TARGET_KERNEL_CROSS_COMPILE_PREFIX   := arm-linux-androideabi-
 
 # Malloc
@@ -165,7 +156,6 @@ TARGET_USERIMAGES_USE_EXT4         := true
 TARGET_USERIMAGES_USE_F2FS         := true
 BOARD_BOOTIMAGE_PARTITION_SIZE     := 0x01E00000 # 44M
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 0x00F00000 # 22M
-BOARD_SYSTEMIMAGE_PARTITION_SIZE   := 1073741824
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 536870912
 BOARD_PERSISTIMAGE_PARTITION_SIZE  := 8388608
 BOARD_CACHEIMAGE_PARTITION_SIZE    := 402653184
@@ -189,7 +179,7 @@ BOARD_RIL_NO_CELLINFOLIST := true
 TARGET_USES_OLD_MNC_FORMAT := true
 
 # Recovery
-TARGET_RECOVERY_FSTAB            := $(DEVICE_PATH)/rootdir/root/fstab.qcom
+TARGET_RECOVERY_FSTAB            := $(PLATFORM_PATH)/rootdir/root/fstab.qcom
 RECOVERY_FSTAB_VERSION           := 2
 TARGET_RECOVERY_PIXEL_FORMAT     := "RGBX_8888"
 BOARD_HAS_NO_SELECT_BUTTON       := true
@@ -222,4 +212,4 @@ WIFI_DRIVER_FW_PATH_AP           := "ap"
 WIFI_DRIVER_FW_PATH_STA          := "sta"
 WPA_SUPPLICANT_VERSION           := VER_0_8_X
 
--include vendor/xiaomi/aries/BoardConfigVendor.mk
+-include vendor/xiaomi/msm8960-common/BoardConfigVendor.mk

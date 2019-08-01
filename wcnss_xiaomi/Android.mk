@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-ifneq ($(filter aries aries,$(TARGET_DEVICE)),)
+ifneq ($(filter aries taurus,$(TARGET_DEVICE)),)
 
 LOCAL_PATH := $(call my-dir)
 
