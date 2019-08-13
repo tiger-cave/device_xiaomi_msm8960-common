@@ -1,9 +1,5 @@
 # Audio
 lib/libacdbloader.so:vendor/lib/libacdbloader.so
-lib/libaudioalsa.so:vendor/lib/libaudioalsa.so
-lib/libaudioparsers.so:vendor/lib/libaudioparsers.so
-lib/libadsprpc.so:vendor/lib/libadsprpc.so
-lib/libsurround_proc.so:vendor/lib/libsurround_proc.so
 
 # Bluetooth
 bin/hci_qcomm_init:vendor/bin/hci_qcomm_init
@@ -29,13 +25,9 @@ lib/libstlport.so:vendor/lib/libstlport.so|f881a16e0dcf95c49b15368f7c7a5f8ad7ed9
 
 # DRM
 bin/qseecomd:vendor/bin/qseecomd
-lib/drm/libdrmprplugin.so:vendor/lib/drm/libdrmprplugin.so
-lib/libDivxDrm.so:vendor/lib/libDivxDrm.so
-lib/libdrmdiag.so:vendor/lib/libdrmdiag.so
 lib/libdrmfs.so:vendor/lib/libdrmfs.so
 lib/libdrmtime.so:vendor/lib/libdrmtime.so
 lib/libQSEEComAPI.so:vendor/lib/libQSEEComAPI.so
-lib/libSHIMDivxDrm.so:vendor/lib/libSHIMDivxDrm.so
 
 # FM
 bin/fm_qsoc_patches:vendor/bin/fm_qsoc_patches
@@ -62,8 +54,6 @@ vendor/lib/libsc-a3xx.so
 
 # GPS
 lib/hw/flp.msm8960.so:vendor/lib/hw/flp.msm8960.so
-lib/libulp2.so:vendor/lib/libulp2.so
-vendor/lib/libalarmservice_jni.so
 vendor/lib/libgeofence.so
 vendor/lib/libizat_core.so
 vendor/lib/libloc_api_v02.so
@@ -74,8 +64,6 @@ vendor/firmware/a300_pfp.fw
 vendor/firmware/a300_pm4.fw
 
 # Media
-lib/libmmipl.so:vendor/lib/libmmipl.so
-lib/libmmjps.so:vendor/lib/libmmjps.so
 lib/libmmmpo.so:vendor/lib/libmmmpo.so
 lib/libmmmpod.so:vendor/lib/libmmmpod.so
 
@@ -103,22 +91,16 @@ vendor/lib/libqmi_encdec.so
 bin/irsc_util:vendor/bin/irsc_util
 bin/netmgrd:vendor/bin/netmgrd
 etc/modem/Diag.cfg:vendor/etc/modem/Diag.cfg
-lib/libCommandSvc.so:vendor/lib/libCommandSvc.so
 lib/libconfigdb.so:vendor/lib/libconfigdb.so
 lib/libdsi_netctrl.so:vendor/lib/libdsi_netctrl.so
-lib/libdsprofile.so:vendor/lib/libdsprofile.so
-lib/libdss.so:vendor/lib/libdss.so
-lib/libdsucsd.so:vendor/lib/libdsucsd.so
 lib/libdsutils.so:vendor/lib/libdsutils.so
 lib/libidl.so:vendor/lib/libidl.so
 lib/libnetmgr.so:vendor/lib/libnetmgr.so
-lib/libqcci_adc.so:vendor/lib/libqcci_adc.so
 lib/libqcci_legacy.so:vendor/lib/libqcci_legacy.so|3bf9e614fe169645dd2e0a1661f3e7638bb58904
 lib/libqdi.so:vendor/lib/libqdi.so
 lib/libqdp.so:vendor/lib/libqdp.so
 lib/libqmi.so:vendor/lib/libqmi.so
 lib/libqmi_client_qmux.so:vendor/lib/libqmi_client_qmux.so
-lib/libqmi_csvt_srvc.so:vendor/lib/libqmi_csvt_srvc.so
 lib/libqmiservices.so:vendor/lib/libqmiservices.so
 lib/libril-qc-qmi-1.so:vendor/lib/libril-qc-qmi-1.so
 lib/libril-qcril-hook-oem.so:vendor/lib/libril-qcril-hook-oem.so
@@ -138,7 +120,6 @@ bin/mpdecision:vendor/bin/mpdecision|72e791a862a0d6496b8a49295a9c323cae7ea203
 bin/thermald:vendor/bin/thermald
 bin/thermal-engine:vendor/bin/thermal-engine
 lib/libthermalclient.so:vendor/lib/libthermalclient.so
-vendor/lib/libqc-opt.so
 vendor/lib/libqti-perfd-client.so
 
 # TimeService
