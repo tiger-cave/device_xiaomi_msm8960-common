@@ -186,7 +186,7 @@ BOARD_RIL_NO_CELLINFOLIST := true
 TARGET_USES_OLD_MNC_FORMAT := true
 
 # Recovery
-TARGET_RECOVERY_FSTAB            := $(PLATFORM_PATH)/rootdir/root/fstab.qcom
+TARGET_RECOVERY_FSTAB            := $(PLATFORM_PATH)/rootdir/etc/fstab.qcom
 RECOVERY_FSTAB_VERSION           := 2
 TARGET_RECOVERY_PIXEL_FORMAT     := "RGBX_8888"
 BOARD_HAS_NO_SELECT_BUTTON       := true

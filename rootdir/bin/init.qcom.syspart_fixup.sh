@@ -1,5 +1,5 @@
-#!/system/bin/sh
-# Copyright (c) 2013, The Linux Foundation. All rights reserved.
+#!/vendor/bin/sh
+# Copyright (c) 2012, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are met:
@@ -8,7 +8,7 @@
 #     * Redistributions in binary form must reproduce the above copyright
 #       notice, this list of conditions and the following disclaimer in the
 #       documentation and/or other materials provided with the distribution.
-#     * Neither the name of Linux Foundation nor
+#     * Neither the name of The Linux Foundation nor
 #       the names of its contributors may be used to endorse or promote
 #       products derived from this software without specific prior written
 #       permission.
@@ -26,37 +26,45 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 
+target="$1"
+serial="$2"
 
-LOG_TAG="qcom-btdun"
-LOG_NAME="${0}:"
-#Set this to default port except for Fusion3 case
-BTDUN_MDM_PORT="/dev/smd7"
+# No path is set up at this point so we have to do it here.
+PATH=/sbin:/system/sbin:/system/bin:/system/xbin
+export PATH
 
-loge ()
-{
-  /system/bin/log -t $LOG_TAG -p e "$LOG_NAME $@"
-}
+mount_needed=false;
 
-logi ()
-{
-  /system/bin/log -t $LOG_TAG -p i "$LOG_NAME $@"
-}
-
-
-logi "Enter init.qcom.btdun.sh"
-
-baseband=`getprop ro.baseband`
-soc_hwid=`cat /sys/devices/system/soc/soc0/id`
-
-if [ "$baseband" == "mdm" ] && [ "$soc_hwid" == "109" ]
-then
-        logi "Set the ttyUSB0 as Modem endpoint for Fusion3"
-        chown -h bluetooth:bluetooth /dev/ttyUSB0
-        BTDUN_MDM_PORT="/dev/ttyUSB0"
+if [ ! -f /system/etc/boot_fixup ];then
+# This should be the first command
+# remount system as read-write.
+  mount -o rw,remount,barrier=1 /system
+  mount_needed=true;
 fi
 
-loge "BTDUN_MDM_PORT= $BTDUN_MDM_PORT"
-#Start BT-DUN port-bridge serice with the required ports
-/system/bin/dun-server $BTDUN_MDM_PORT /dev/rfcomm0
+# **** WARNING *****
+# This runs in a single-threaded, critical path portion
+# of the Android bootup sequence.  This is to guarantee
+# all necessary system partition fixups are done before
+# the rest of the system starts up.  Run any non-
+# timing critical tasks in a separate process to
+# prevent slowdown at boot.
 
-exit 0
+# Run modem link script
+if [ -f /vendor/bin/init.qcom.modem_links.sh ]; then
+  /vendor/bin/sh /vendor/bin/init.qcom.modem_links.sh
+fi
+
+# Run mdm link script
+if [ -f /vendor/bin/init.qcom.mdm_links.sh ]; then
+  /vendor/bin/sh /vendor/bin/init.qcom.mdm_links.sh
+fi
+
+touch /system/etc/boot_fixup
+
+if $mount_needed ;then
+# This should be the last command
+# remount system as read-only.
+  mount -o ro,remount,barrier=1 /system
+fi
+

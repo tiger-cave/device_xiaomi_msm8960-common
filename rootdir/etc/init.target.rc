@@ -40,7 +40,7 @@ on init
     symlink /sdcard /storage/sdcard0
 
 on fs
-    mount_all ./fstab.qcom --early
+    mount_all /vendor/etc/fstab.qcom --early
     restorecon_recursive /persist
     mkdir /persist/property
     chmod 0775 /persist/property
@@ -63,7 +63,7 @@ on late-fs
     start bootanim
     start vendor.gralloc-2-0
 
-    mount_all ./fstab.qcom --late
+    mount_all /vendor/etc/fstab.qcom --late
 
 on boot
    write /sys/devices/i2c-3/3-0024/cyttsp_update_fw 1

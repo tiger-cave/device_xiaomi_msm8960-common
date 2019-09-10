@@ -1,5 +1,5 @@
-#!/system/bin/sh
-# Copyright (c) 2013, The Linux Foundation. All rights reserved.
+#!/vendor/bin/sh
+# Copyright (c) 2009-2012, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are met:
@@ -26,45 +26,52 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 
-#
-# start ril-daemon only for targets on which radio is present
-#
-baseband=`getprop ro.baseband`
-netmgr=`getprop ro.use_data_netmgrd`
-sgltecsfb=`getprop persist.radio.sglte_csfb`
+target=`getprop ro.board.platform`
 
-case "$baseband" in
-    "apq")
-    setprop ro.radio.noril yes
-    stop ril-daemon
+chown -h system /sys/devices/system/cpu/cpufreq/ondemand/sampling_rate
+chown -h system /sys/devices/system/cpu/cpufreq/ondemand/sampling_down_factor
+chown -h system /sys/devices/system/cpu/cpufreq/ondemand/io_is_busy
+
+emmc_boot=`getprop ro.boot.emmc`
+case "$emmc_boot"
+    in "true")
+        chown -h system /sys/devices/platform/rs300000a7.65536/force_sync
+        chown -h system /sys/devices/platform/rs300000a7.65536/sync_sts
+        chown -h system /sys/devices/platform/rs300100a7.65536/force_sync
+        chown -h system /sys/devices/platform/rs300100a7.65536/sync_sts
+    ;;
 esac
 
-case "$baseband" in
-    "msm" | "csfb" | "svlte2a" | "mdm" | "sglte" | "sglte2" | "dsda2" | "unknown")
-    start qmuxd
-    case "$baseband" in
-        "svlte2a" | "csfb" | "sglte" | "sglte2")
-          start qmiproxy
+case "$target" in
+    "msm8960" )
+        echo 10 > /sys/devices/platform/msm_sdcc.3/idle_timeout
         ;;
-        "dsda2")
-          setprop persist.radio.multisim.config dsda
-    esac
-
-    multisim=`getprop persist.radio.multisim.config`
-
-    if [ "$multisim" = "dsds" ] || [ "$multisim" = "dsda" ]; then
-        stop ril-daemon
-        start ril-daemon
-        start ril-daemon1
-    elif [ "$multisim" = "tsts" ]; then
-        stop ril-daemon
-        start ril-daemon
-        start ril-daemon1
-        start ril-daemon2
-    fi
-
-    case "$netmgr" in
-        "true")
-        start netmgrd
-    esac
 esac
+
+# Post-setup services
+case "$target" in
+    "msm8960")
+        soc_id=`cat /sys/devices/system/soc/soc0/id`
+        case "$soc_id" in
+             "153") #8064 v2
+                 start thermal-engine
+             ;;
+
+	     *) #all targets except 8064 v2
+		 start thermald
+	     ;;
+        esac
+    ;;
+esac
+
+case "$target" in
+    "msm8960" )
+        start mpdecision
+    ;;
+esac
+
+
+#fastrpc permission setting
+insmod /system/lib/modules/adsprpc.ko
+chown -h system.system /dev/adsprpc-smd
+chmod -h 666 /dev/adsprpc-smd

@@ -1,5 +1,5 @@
-#!/system/bin/sh
-# Copyright (c) 2009-2011, The Linux Foundation. All rights reserved.
+#!/vendor/bin/sh
+# Copyright (c) 2013, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are met:
@@ -8,7 +8,7 @@
 #     * Redistributions in binary form must reproduce the above copyright
 #       notice, this list of conditions and the following disclaimer in the
 #       documentation and/or other materials provided with the distribution.
-#     * Neither the name of The Linux Foundation nor
+#     * Neither the name of Linux Foundation nor
 #       the names of its contributors may be used to endorse or promote
 #       products derived from this software without specific prior written
 #       permission.
@@ -26,18 +26,11 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 
-setprop vendor.hw.fm.init 0
 
-mode=`getprop vendor.hw.fm.mode`
-version=`getprop hw.fm.version`
-isAnalog=`getprop hw.fm.isAnalog`
-version=197632
-
-#find the transport type
-TRANSPORT=`getprop ro.qualcomm.bt.hci_transport`
-
-LOG_TAG="qcom-fm"
+LOG_TAG="qcom-btdun"
 LOG_NAME="${0}:"
+#Set this to default port except for Fusion3 case
+BTDUN_MDM_PORT="/dev/smd7"
 
 loge ()
 {
@@ -49,52 +42,21 @@ logi ()
   /system/bin/log -t $LOG_TAG -p i "$LOG_NAME $@"
 }
 
-failed ()
-{
-  loge "$1: exit code $2"
-  exit $2
-}
 
-logi "In FM shell Script"
-logi "mode: $mode"
-logi "isAnalog: $isAnalog"
-logi "Transport : $TRANSPORT"
-logi "Version : $version"
+logi "Enter init.qcom.btdun.sh"
 
-#$fm_qsoc_patches <fm_chipVersion> <enable/disable WCM>
-#
-case $mode in
-  "normal")
-      logi "inserting the radio transport module"
-      echo 1 > /sys/module/radio_iris_transport/parameters/fmsmd_set
-      /vendor/bin/fm_qsoc_patches $version 0
-     ;;
-  "wa_enable")
-   /vendor/bin/fm_qsoc_patches $version 1
-     ;;
-  "wa_disable")
-   /vendor/bin/fm_qsoc_patches $version 2
-     ;;
-  "config_dac")
-   /vendor/bin/fm_qsoc_patches $version 3 $isAnalog
-     ;;
-   *)
-    logi "Shell: Default case"
-    /vendor/bin/fm_qsoc_patches $version 0
-    ;;
-esac
+baseband=`getprop ro.baseband`
+soc_hwid=`cat /sys/devices/system/soc/soc0/id`
 
-exit_code_fm_qsoc_patches=$?
+if [ "$baseband" == "mdm" ] && [ "$soc_hwid" == "109" ]
+then
+        logi "Set the ttyUSB0 as Modem endpoint for Fusion3"
+        chown -h bluetooth:bluetooth /dev/ttyUSB0
+        BTDUN_MDM_PORT="/dev/ttyUSB0"
+fi
 
-case $exit_code_fm_qsoc_patches in
-   0)
-	logi "FM QSoC calibration and firmware download succeeded"
-   ;;
-  *)
-	failed "FM QSoC firmware download and/or calibration failed" $exit_code_fm_qsoc_patches
-   ;;
-esac
-
-setprop vendor.hw.fm.init 1
+loge "BTDUN_MDM_PORT= $BTDUN_MDM_PORT"
+#Start BT-DUN port-bridge serice with the required ports
+/system/bin/dun-server $BTDUN_MDM_PORT /dev/rfcomm0
 
 exit 0
