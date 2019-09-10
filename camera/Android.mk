@@ -117,7 +117,7 @@ ifeq ($(USE_DEVICE_SPECIFIC_CAMERA),true)
       endif
 
       LOCAL_SHARED_LIBRARIES+= libgenlock libbinder libhardware libnativewindow
-      LOCAL_SHARED_LIBRARIES += android.hidl.token@1.0-utils android.hardware.graphics.bufferqueue@1.0
+      LOCAL_SHARED_LIBRARIES += android.hidl.token@1.0-utils android.hardware.graphics.bufferqueue@1.0 android.hardware.graphics.bufferqueue@2.0
       ifneq ($(DLOPEN_LIBMMCAMERA),1)
         LOCAL_SHARED_LIBRARIES+= liboemcamera
       else
