@@ -764,3 +764,6 @@ on property:persist.sys.aries.power_profile=high
     write /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor "performance"
     write /sys/devices/system/cpu/cpu3/cpufreq/scaling_governor "performance"
     write /sys/devices/platform/kgsl-3d0.0/kgsl/kgsl-3d0/pwrscale/policy "msm"
+
+on property:apexd.status=ready
+    mount none /system/etc/swcodec/ld.config.txt /apex/com.android.media.swcodec/etc/ld.config.txt bind
