@@ -8,7 +8,7 @@ vendor/lib/libaptXHD_encoder.so|974c486e4ca03faa0713553d9dfe2995ac93e01c
 vendor/lib/libbtnv.so
 
 # Camera
-bin/mm-qcamera-daemon:vendor/bin/mm-qcamera-daemon
+bin/mm-qcamera-daemon:vendor/bin/mm-qcamera-daemon|e8159d4975e9df403fa3d7c4fe642a66501db819
 lib/libgemini.so:vendor/lib/libgemini.so
 lib/libimage-jpeg-dec-omx-comp.so:vendor/lib/libimage-jpeg-dec-omx-comp.so
 lib/libimage-jpeg-enc-omx-comp.so:vendor/lib/libimage-jpeg-enc-omx-comp.so
@@ -19,9 +19,10 @@ lib/libmmcamera_hdr_lib.so:vendor/lib/libmmcamera_hdr_lib.so
 lib/libmmcamera_image_stab.so:vendor/lib/libmmcamera_image_stab.so
 lib/libmmcamera_statsproc31.so:vendor/lib/libmmcamera_statsproc31.so
 lib/libmmcamera_wavelet_lib.so:vendor/lib/libmmcamera_wavelet_lib.so
-lib/libmmjpeg.so:vendor/lib/libmmjpeg.so
+lib/libmercury.so:vendor/lib/libmercury.so|199889a630a744aa2b75f8d09e38b1e9de2e2ef8
+lib/libmmjpeg.so:vendor/lib/libmmjpeg.so|2a16032fad9b43b72030c094590cd08aa668a9bb
 lib/libmmstillomx.so:vendor/lib/libmmstillomx.so
-lib/liboemcamera.so:vendor/lib/liboemcamera.so
+lib/liboemcamera.so:vendor/lib/liboemcamera.so|eba19e1109e2ca330752772352b873c8907395b1
 lib/libstlport.so:vendor/lib/libstlport.so|f881a16e0dcf95c49b15368f7c7a5f8ad7ed9f81
 
 # DRM
