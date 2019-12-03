@@ -99,9 +99,6 @@ ifeq ($(HOST_OS),linux)
   endif
 endif
 
-# MK Hardware
-JAVA_SOURCE_OVERLAYS := org.mokee.hardware|$(PLATFORM_PATH)/mkhw|**/*.java
-
 # Display
 BOARD_USES_LEGACY_MMAP          := true
 HAVE_ADRENO_SOURCE              := false

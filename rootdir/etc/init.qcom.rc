@@ -389,16 +389,6 @@ on post-fs-data
     mkdir /dev/socket/mpdecision 2770 root system
     chmod 2770 /dev/socket/mpdecision
 
-    # adjust vibrator amplitude
-    #write /sys/class/timed_output/vibrator/amp 90
-    chown root system /sys/class/timed_output/vibrator/amp
-    chmod 0664 /sys/class/timed_output/vibrator/amp
-    restorecon /sys/class/timed_output/vibrator/amp
-
-    chown root system /proc/touchscreen/disable_keys
-    chmod 0664 /proc/touchscreen/disable_keys
-    restorecon /proc/touchscreen/disable_keys
-
 on charger
     mount ext4 /dev/block/platform/msm_sdcc.1/by-name/system /system wait ro barrier=1
     # Enable Power modes and set the CPU Freq Sampling rates
