@@ -2,6 +2,8 @@
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.audio.vns.mode=2 \
     audio.offload.disable=1 \
+    debug.stagefright.omx_default_rank.sw-audio=1 \
+    debug.stagefright.omx_default_rank=0 \
     mm.enable.smoothstreaming=true \
     persist.vendor.audio.fluence.voicecall=true \
     persist.vendor.audio.fluence.voicerec=false \
