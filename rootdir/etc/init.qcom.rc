@@ -571,7 +571,7 @@ service gpsone_daemon /system/bin/gpsone_daemon
     group gps inet net_raw
     disabled
 
-service fm_dl /vendor/bin/init.qcom.fm.sh
+service vendor.fm /vendor/bin/init.qcom.fm.sh
     class late_start
     user root
     group system
