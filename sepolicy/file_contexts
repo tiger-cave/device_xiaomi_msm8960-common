@@ -1,0 +1,2 @@
+# Files in rootfs
+/tombstones(/.*)?          u:object_r:firmware_file:s0

@@ -188,6 +188,7 @@ TARGET_REMOVE_SECDISCARD_COMMAND := true
 
 # Sepolicy
 include device/qcom/sepolicy-legacy/sepolicy.mk
+BOARD_SEPOLICY_DIRS += $(PLATFORM_PATH)/sepolicy
 
 # Security patch level
 VENDOR_SECURITY_PATCH := 2016-01-01
