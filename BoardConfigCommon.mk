@@ -197,6 +197,9 @@ VENDOR_SECURITY_PATCH := 2016-01-01
 # Use mke2fs to create ext4 images
 TARGET_USES_MKE2FS := true
 
+# Vintf
+PRODUCT_ENFORCE_VINTF_MANIFEST_OVERRIDE := true
+
 # Wifi
 BOARD_HAS_QCOM_WLAN              := true
 BOARD_WLAN_DEVICE                := qcwcn
