@@ -140,6 +140,9 @@ BUILD_BROKEN_USES_BUILD_COPY_HEADERS := true
 # Lights
 TARGET_PROVIDES_LIBLIGHT := true
 
+# Memfd
+TARGET_HAS_MEMFD_BACKPORT := true
+
 # Kernel
 BOARD_KERNEL_BASE                    := 0x80200000
 BOARD_KERNEL_IMAGE_NAME              := zImage
