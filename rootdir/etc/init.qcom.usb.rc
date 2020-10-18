@@ -652,8 +652,8 @@ on property:sys.usb.config=mass_storage,adb
     write /sys/class/android_usb/android0/idVendor 2717
     write /sys/class/android_usb/android0/idProduct ff28
     write /sys/class/android_usb/android0/functions adb,mass_storage
-    write /sys/class/android_usb/android0/iManufacturer $ro.product.manufacturer
-    write /sys/class/android_usb/android0/iProduct $ro.product.model
+    write /sys/class/android_usb/android0/iManufacturer ${ro.product.manufacturer}
+    write /sys/class/android_usb/android0/iProduct ${ro.product.model}
     write /sys/class/android_usb/android0/enable 1
     start mdbd
     start adbd
