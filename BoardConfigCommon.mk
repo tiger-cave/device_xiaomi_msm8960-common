@@ -75,6 +75,7 @@ BOARD_HAVE_BLUETOOTH                        := true
 BOARD_HAVE_BLUETOOTH_QCOM                   := true
 
 # Camera
+MALLOC_SVELTE_FOR_LIBC32 := true
 USE_DEVICE_SPECIFIC_CAMERA                  := true
 USE_DEVICE_SPECIFIC_QCOM_PROPRIETARY        := true
 TARGET_NEEDS_PLATFORM_TEXT_RELOCATIONS      := true
