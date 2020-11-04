@@ -386,6 +386,9 @@ on post-fs-data
     mkdir /dev/socket/mpdecision 2770 root system
     chmod 2770 /dev/socket/mpdecision
 
+    # Services
+    setprop init.svc.console stopped
+
 on charger
     mount ext4 /dev/block/platform/msm_sdcc.1/by-name/system /system wait ro barrier=1
     # Enable Power modes and set the CPU Freq Sampling rates
