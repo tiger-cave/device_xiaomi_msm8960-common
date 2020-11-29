@@ -123,9 +123,6 @@ lib/libthermalclient.so:vendor/lib/libthermalclient.so
 vendor/lib/libqti-perfd-client.so
 
 # TimeService
--app/TimeService/TimeService.apk:vendor/app/TimeService/TimeService.apk
-bin/time_daemon:vendor/bin/time_daemon
-lib/libTimeService.so:vendor/lib/libTimeService.so
 vendor/lib/libtime_genoff.so
 
 # Video Firmware

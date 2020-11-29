@@ -358,9 +358,6 @@ on post-fs-data
     chown system system /dev/sysmatdrv
     chmod 0666 /dev/sysmatdrv
 
-    # Create /data/time folder for time-services
-    mkdir /data/time/ 0700 system system
-
     mkdir /data/audio/ 0770 media audio
     # Enable the setgid bit on the directory
     mkdir /data/audio 0770 media audio
@@ -612,12 +609,6 @@ service qcom-post-boot /vendor/bin/init.qcom.post_boot.sh
 on property:sys.boot_completed=1
     setprop vendor.post_boot.parsed 1
     start qcom-post-boot
-
-service time_daemon /vendor/bin/time_daemon
-   class late_start
-   user root
-   group root
-
 
 service sysmatsir /system/bin/smonsir
     user root
