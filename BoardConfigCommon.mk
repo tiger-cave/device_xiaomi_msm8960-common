@@ -201,6 +201,9 @@ TARGET_USES_MKE2FS := true
 # Vintf
 PRODUCT_ENFORCE_VINTF_MANIFEST_OVERRIDE := true
 
+# VNDK
+TARGET_VNDK_USE_CORE_VARIANT := true
+
 # Wifi
 BOARD_HAS_QCOM_WLAN              := true
 BOARD_WLAN_DEVICE                := qcwcn
