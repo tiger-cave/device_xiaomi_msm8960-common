@@ -26,7 +26,7 @@ LOCAL_C_INCLUDES += $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/include
 LOCAL_C_INCLUDES += $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/include/media
 LOCAL_ADDITIONAL_DEPENDENCIES := $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr
 
-LOCAL_C_INCLUDES+= $(call project-path-for,qcom-media)/mm-core/inc
+LOCAL_C_INCLUDES+= hardware/qcom/media/mm-core/inc
 LOCAL_CFLAGS += -include bionic/libc/include/sys/socket.h
 LOCAL_CFLAGS += -include bionic/libc/include/sys/un.h
 

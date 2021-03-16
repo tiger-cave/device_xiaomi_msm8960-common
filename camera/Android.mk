@@ -99,14 +99,14 @@ ifeq ($(USE_DEVICE_SPECIFIC_CAMERA),true)
       #LOCAL_CFLAGS+= -DCAMERA_SMOOTH_ZOOM
 
       ifeq ($(V4L2_BASED_LIBCAM),true)
-        LOCAL_C_INCLUDES+= $(call project-path-for,qcom-media)/mm-core/inc
+        LOCAL_C_INCLUDES+= hardware/qcom/media/mm-core/inc
         LOCAL_C_INCLUDES+= $(LOCAL_PATH)/mm-camera-interface
       endif
 
-      LOCAL_C_INCLUDES+= $(call project-path-for,qcom-display)/libgralloc
-      LOCAL_C_INCLUDES+= $(call project-path-for,qcom-display)/libgenlock
+      LOCAL_C_INCLUDES+= hardware/qcom/display/libgralloc
+      LOCAL_C_INCLUDES+= hardware/qcom/display/libgenlock
       LOCAL_C_INCLUDES+= frameworks/native/include/media/hardware
-      LOCAL_C_INCLUDES+= $(call project-path-for,qcom-media)/libstagefrighthw
+      LOCAL_C_INCLUDES+= hardware/qcom/media/libstagefrighthw
       LOCAL_HEADER_LIBRARIES := libmedia_headers
 
       ifeq ($(V4L2_BASED_LIBCAM),true)
