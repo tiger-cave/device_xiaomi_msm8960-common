@@ -145,6 +145,7 @@ BOARD_KERNEL_CMDLINE                 := console=null androidboot.hardware=qcom e
 BOARD_RAMDISK_USE_XZ                 := true
 TARGET_KERNEL_ARCH                   := arm
 TARGET_KERNEL_SOURCE                 := kernel/xiaomi/aries
+TARGET_KERNEL_CROSS_COMPILE_PREFIX   := arm-linux-androideabi-
 
 # Malloc
 MALLOC_SVELTE := true
