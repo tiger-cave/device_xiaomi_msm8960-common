@@ -118,7 +118,7 @@ lib/libsensor_test.so:vendor/lib/libsensor_test.so
 lib/libsensor_user_cal.so:vendor/lib/libsensor_user_cal.so
 
 # Thermal
-bin/mpdecision:vendor/bin/mpdecision|72e791a862a0d6496b8a49295a9c323cae7ea203
+bin/mpdecision:vendor/bin/mpdecision|e4aed0629c4f7c5ab4f5e4ccd923b89ab2d10638
 bin/thermald:vendor/bin/thermald
 bin/thermal-engine:vendor/bin/thermal-engine
 lib/libthermalclient.so:vendor/lib/libthermalclient.so
