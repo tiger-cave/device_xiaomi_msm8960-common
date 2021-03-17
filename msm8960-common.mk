@@ -100,6 +100,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/bootanimation.zip:system/media/bootanimation.zip
 
+# Browser
+PRODUCT_PACKAGES += \
+    Browser2
+
 # Camera
 PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl \
