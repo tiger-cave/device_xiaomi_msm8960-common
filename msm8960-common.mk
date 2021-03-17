@@ -96,6 +96,10 @@ PRODUCT_PACKAGES += \
     bdaddr_xiaomi \
     libbt-vendor
 
+# Bootanimation
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/bootanimation.zip:system/media/bootanimation.zip
+
 # Camera
 PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl \
