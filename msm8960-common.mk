@@ -106,7 +106,7 @@ PRODUCT_PACKAGES += \
     camera.device@1.0-impl \
     camera.msm8960 \
     libmmcamera_interface2 \
-    Snap
+    FootejCamera
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/external_camera_config.xml:$(TARGET_COPY_OUT_VENDOR)/etc/external_camera_config.xml
