@@ -286,7 +286,7 @@ int sensors_poll_context_t::get_device_version_by_handle(int handle) {
 
 static bool halIsAPILevelCompliant(sensors_poll_context_t *ctx, int handle, int level) {
     int version = ctx->get_device_version_by_handle(handle);
-    ALOGI("%s: version: %d, level: %d", __func__, version, level);
+    ALOGD("%s: version: %d, level: %d", __func__, version, level);
     return version != -1 && (version >= level);
 }
 
@@ -506,7 +506,7 @@ static int device__close(struct hw_device_t *dev) {
 
 static int device__activate(struct sensors_poll_device_t *dev, int handle,
         int enabled) {
-    ALOGI("Called device__activate, handle: %d, enable: %s", handle, enabled ? "true" : "false");
+    ALOGD("Called device__activate, handle: %d, enable: %s", handle, enabled ? "true" : "false");
     sensors_poll_context_t* ctx = (sensors_poll_context_t*) dev;
     int activate_retval = ctx->activate(handle, enabled);
     if (!halIsAPILevelCompliant(ctx, handle, SENSORS_DEVICE_API_VERSION_1_1)) {
@@ -515,7 +515,7 @@ static int device__activate(struct sensors_poll_device_t *dev, int handle,
         if (enabled && !sensors_batch_list[index].empty) {
             int delay_retval = ctx->setDelay(handle, sensors_batch_list[index].period_ns);
             sensors_batch_list[index].empty = true;
-            ALOGI("%s: activate return %d, setDelay return %d", __func__, activate_retval, delay_retval);
+            ALOGD("%s: activate return %d, setDelay return %d", __func__, activate_retval, delay_retval);
             return delay_retval || activate_retval;
         }
     }
@@ -525,7 +525,7 @@ static int device__activate(struct sensors_poll_device_t *dev, int handle,
 static int device__setDelay(struct sensors_poll_device_t *dev, int handle,
         int64_t ns) {
     sensors_poll_context_t* ctx = (sensors_poll_context_t*) dev;
-    ALOGI("Called device__setDelay: handle: %d, ns: %lld", handle, ns);
+    ALOGD("Called device__setDelay: handle: %d, ns: %lld", handle, ns);
     return ctx->setDelay(handle, ns);
 }
 
@@ -537,7 +537,7 @@ static int device__poll(struct sensors_poll_device_t *dev, sensors_event_t* data
 
 static int device__batch(struct sensors_poll_device_1 *dev, int handle,
         int flags, int64_t period_ns, int64_t timeout) {
-    ALOGI("Called device__batch: handle %d, flags: %d, period_ns %lld, timeout %lld",
+    ALOGD("Called device__batch: handle %d, flags: %d, period_ns %lld, timeout %lld",
             handle, flags, period_ns, timeout);
     sensors_poll_context_t* ctx = (sensors_poll_context_t*) dev;
     if (halIsAPILevelCompliant(ctx, handle, SENSORS_DEVICE_API_VERSION_1_1)) {
@@ -549,7 +549,7 @@ static int device__batch(struct sensors_poll_device_1 *dev, int handle,
             ALOGW("Saving handle %d batch data failed", handle);
         } else {
             sensors_batch_list[index].update_batch_data(handle, flags, period_ns, timeout);
-            ALOGI("Successfully saved batch data for handle %d", handle);
+            ALOGD("Successfully saved batch data for handle %d", handle);
         }
         //skip setDelay() if sensors haven't been activated, or SystemUI will freeze and die.
         return 0;
@@ -640,7 +640,7 @@ static void lazy_init_modules() {
         if (lib_handle == NULL) {
             ALOGW("dlerror(): %s", dlerror());
         } else {
-            ALOGI("Loaded library from %s", path);
+            ALOGD("Loaded library from %s", path);
             ALOGV("Opening symbol \"%s\"", sym);
             // clear old errors
             dlerror();
