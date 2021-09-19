@@ -64,13 +64,6 @@ case "$target" in
     ;;
 esac
 
-case "$target" in
-    "msm8960" )
-        start mpdecision
-    ;;
-esac
-
-
 #fastrpc permission setting
 insmod /system/lib/modules/adsprpc.ko
 chown -h system.system /dev/adsprpc-smd

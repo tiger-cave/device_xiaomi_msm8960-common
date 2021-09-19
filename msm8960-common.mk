@@ -214,16 +214,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     messaging
 
-# mpdecision configuration
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/thermal/thermald-8064.conf:system/etc/thermald-8064.conf \
-    $(LOCAL_PATH)/configs/thermal/thermald-8064ab.conf:system/etc/thermald-8064ab.conf \
-    $(LOCAL_PATH)/configs/thermal/thermald-8960.conf:system/etc/thermald-8960.conf \
-    $(LOCAL_PATH)/configs/thermal/thermald-8960ab.conf:system/etc/thermald-8960ab.conf \
-    $(LOCAL_PATH)/configs/thermal/thermal-engine-8064.conf:system/etc/thermal-engine-8064.conf \
-    $(LOCAL_PATH)/configs/thermal/thermal-engine-8064ab.conf:system/etc/thermal-engine-8064ab.conf \
-    $(LOCAL_PATH)/configs/thermal/thermal-engine-8960.conf:system/etc/thermal-engine-8960.conf
-
 # Omx
 PRODUCT_PACKAGES += \
     libOmxAacEnc \
@@ -238,10 +228,6 @@ PRODUCT_PACKAGES += \
     libdivxdrmdecrypt \
     libmm-omxcore \
     libstagefrighthw
-
-# Perf
-PRODUCT_PACKAGES += \
-    libshims_atomic
 
 # Power
 PRODUCT_PACKAGES += \
@@ -287,6 +273,16 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sensors/_hals.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/_hals.conf
+
+# Thermal configuration
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/thermal/thermald-8064.conf:system/etc/thermald-8064.conf \
+    $(LOCAL_PATH)/configs/thermal/thermald-8064ab.conf:system/etc/thermald-8064ab.conf \
+    $(LOCAL_PATH)/configs/thermal/thermald-8960.conf:system/etc/thermald-8960.conf \
+    $(LOCAL_PATH)/configs/thermal/thermald-8960ab.conf:system/etc/thermald-8960ab.conf \
+    $(LOCAL_PATH)/configs/thermal/thermal-engine-8064.conf:system/etc/thermal-engine-8064.conf \
+    $(LOCAL_PATH)/configs/thermal/thermal-engine-8064ab.conf:system/etc/thermal-engine-8064ab.conf \
+    $(LOCAL_PATH)/configs/thermal/thermal-engine-8960.conf:system/etc/thermal-engine-8960.conf
 
 # TimeKeep
 PRODUCT_PACKAGES += \
